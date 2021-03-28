@@ -46,8 +46,7 @@ th.hidden-column, td.hidden-column {
 	margin-bottom: 3px;
 }
 
-.account-amounts-column .account-amounts-primary .amount-nano {
-	font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+.account-amounts-column .account-amounts-primary .amount-integer {
 	font-weight: 700;
 	font-size: 16px;
 }

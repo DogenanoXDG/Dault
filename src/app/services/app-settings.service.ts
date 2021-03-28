@@ -26,6 +26,7 @@ interface AppSettings {
   minimumReceive: string | null;
   walletVersion: number | null;
   lightModeEnabled: boolean;
+  identiconsStyle: string;
 }
 
 @Injectable()
@@ -51,7 +52,8 @@ export class AppSettingsService {
     serverAuth: null,
     minimumReceive: null,
     walletVersion: 1,
-    lightModeEnabled: false
+    lightModeEnabled: false,
+    identiconsStyle: 'natricon',
   };
 
   serverOptions = [
@@ -177,6 +179,7 @@ export class AppSettingsService {
       minimumReceive: null,
       walletVersion: 1,
       lightModeEnabled: false,
+      identiconsStyle: 'natricon',
     };
   }
 

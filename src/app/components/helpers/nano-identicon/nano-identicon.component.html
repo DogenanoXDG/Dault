@@ -1,0 +1,6 @@
+<ng-container *ngIf="(settingIdenticonsStyle === 'nanoidenticons')">
+	<div #canvasContainer class="canvas-container"></div>
+</ng-container>
+<ng-container *ngIf="(settingIdenticonsStyle === 'natricon')">
+	<img [src]="('https://doggycon.dogenano.io/api/v1/pilou/' + accountID)">
+</ng-container>
