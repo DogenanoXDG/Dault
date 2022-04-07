@@ -72,7 +72,8 @@ export class RepresentativesComponent implements OnInit {
     // Listen for query parameters that set defaults
     this.router.queryParams.subscribe(params => {
       this.hideOverview = params && params.hideOverview;
-      this.showRecommendedReps = params && params.showRecommended;
+      // this.showRecommendedReps = params && params.showRecommended;
+      this.showRecommendedReps = false
 
       if (params && params.accounts) {
         this.selectedAccounts = []; // Reset the preselected accounts
