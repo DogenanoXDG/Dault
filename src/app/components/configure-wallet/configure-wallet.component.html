@@ -41,7 +41,7 @@
         </button>
       </div>
       <div class="uk-width-expand">
-        <button class="wallet-option" (click)="setPanel(panels.import); selectedImportOption = 'ledger';">
+        <!-- <button class="wallet-option" (click)="setPanel(panels.import); selectedImportOption = 'ledger';">
           <div class="icon">
             <svg width="120" height="120" version="1.1" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
               <g>
@@ -55,7 +55,7 @@
           </div>
           <h2>Use<br>Ledger</h2>
           <p>Nano S / Nano X</p>
-        </button>
+        </button> -->
         <button class="wallet-option" (click)="setPanel(panels.import); selectedImportOption = 'seed';">
           <div class="icon">
             <div class="seed">{{ exampleSeed }}</div>
@@ -282,7 +282,7 @@
         </div>
       </div>
     </div>
-    <div uk-grid *ngIf="selectedImportOption === 'ledger'" class="uk-margin-top">
+    <!-- <div uk-grid *ngIf="selectedImportOption === 'ledger'" class="uk-margin-top">
       <div class="uk-width-1-1">
         <h3>Use Ledger Hardware Wallet</h3>
         <p>
@@ -339,7 +339,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <div uk-grid *ngIf="selectedImportOption === 'privateKey'" class="uk-margin-top">
       <div class="uk-width-1-1">
         <h3>Import Private Key</h3>
