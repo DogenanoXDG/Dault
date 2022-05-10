@@ -173,14 +173,14 @@
                 </div>
 
                 <div class="uk-form-controls">
-                  <div class="uk-inline uk-width-1-1 uk-margin-top">
+                  <div class="uk-inline uk-width-1-1 uk-margin-top" *ngIf="supportsMyNanoNinja">
                     <button class="uk-button uk-button-default uk-button-small" *ngIf="showRecommendedReps" (click)="showRecommendedReps = !showRecommendedReps"><span uk-icon="icon: minus; ratio: 0.8" style="margin-right: 5px;"></span> Hide Recommended Representatives</button>
                     <button class="uk-button uk-button-primary uk-button-small" *ngIf="!showRecommendedReps" (click)="showRecommendedReps = !showRecommendedReps"><span uk-icon="icon: plus; ratio: 0.8" style="margin-right: 5px;"></span> View Recommended Representatives</button>
                   </div>
                 </div>
               </div>
 
-              <div *ngIf="showRecommendedReps">
+              <div *ngIf="showRecommendedReps && supportsMyNanoNinja">
                 <hr>
 
                 <div class="uk-margin">

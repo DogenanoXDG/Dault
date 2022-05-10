@@ -26,7 +26,8 @@ export class RepresentativesComponent implements OnInit {
   @ViewChild('repInput') repInput;
 
   currencyTicker = environment.currency.ticker;
-
+  supportsMyNanoNinja = environment.currency.supportsMyNanoNinja;
+  
   changeAccountID: any = null;
   toRepresentativeID = '';
 
