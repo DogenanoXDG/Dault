@@ -118,7 +118,7 @@ export class RepresentativesComponent implements OnInit {
           name: representative.alias
         };
 
-        this.representativeList.push(temprep);
+        // this.representativeList.push(temprep);
       }
     }
 

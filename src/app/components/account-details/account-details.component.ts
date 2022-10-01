@@ -169,7 +169,7 @@ export class AccountDetailsComponent implements OnInit, OnDestroy {
           name: representative.alias
         };
 
-        this.representativeList.push(temprep);
+        // this.representativeList.push(temprep);
       }
     }
 

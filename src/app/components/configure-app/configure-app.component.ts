@@ -194,7 +194,7 @@ export class ConfigureAppComponent implements OnInit {
           name: representative.alias
         };
 
-        this.representativeList.push(temprep);
+        // this.representativeList.push(temprep);
       }
     }
 
