@@ -347,7 +347,9 @@ function setPrefix(account, prefix = 'xrb') {
 /**
  * Conversion functions
  */
-const mnano = Math.pow(10, environment.currency.precision);
+// const mnano = Math.pow(10, environment.currency.precision);
+let mnanoPow = new BigNumber(10)
+const mnano = mnanoPow.exponentiatedBy(environment.currency.precision)
 const knano = 1000000000000000000000000000;
 const nano  = 1000000000000000000000000;
 function mnanoToRaw(value) {
