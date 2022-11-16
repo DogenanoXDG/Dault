@@ -30,6 +30,11 @@ export const environment = {
       name: 'Dogenano Official',
       warn: false,
     },
+    {
+      id: 'xdg_3trcizdrj8uck5f46onn3tomac7wgx5rfey7a1y5dp9q3dqyn6ccup688atx',
+      name: 'MyEcoria',
+      warn: false,
+    }
   ],
-  donationAddress: 'xdg_3niceeeyiaa86k58zhaeygxfkuzgffjtwju9ep33z9c8qekmr3iuc95jbqc8', 
+  donationAddress: 'xdg_3dauit3e9fqzooonwxfio8rbe9m7a3pjen9qis5e4nqtzqd5qdp7ekhsdjcf', 
 };
