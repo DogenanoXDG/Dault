@@ -19,6 +19,14 @@ export const environment = {
       ws: 'wss://ws.dogenano.io',
       auth: null,
       shouldRandom: true,
+    },
+    {
+      name: 'MyEcoria Node',
+      value: 'myecoria',
+      api: 'https://dogerpc.myecoria.com',
+      ws: 'ws://server.myecoria.com:7058',
+      auth: null,
+      shouldRandom: true,
     }
   ],
   representativeAccounts: [
