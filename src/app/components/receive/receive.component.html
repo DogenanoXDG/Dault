@@ -1,7 +1,7 @@
 <div class="uk-animation-slide-left-small" uk-grid>
   <div class="uk-width-1-1">
     
-      <h2 class="uk-heading-divider">Receive Nano</h2>
+      <h2 class="uk-heading-divider">Receive DogeNano</h2>
 
       <div class="uk-width-1-1 nlt-page-intro">
         <p>
@@ -27,7 +27,7 @@
       </div>
               
       <div *ngIf="qrCodeImage" class="uk-width-3-4@s narrow-div">
-        <input [(ngModel)]="receiveAmount" class="uk-input uk-margin-small-bottom" type="text" (ngModelChange)="changeQRAmount(receiveAmount)" title="Amount to be included in the QR and read by the sending wallet." placeholder="Optional Nano amount">
+        <input [(ngModel)]="receiveAmount" class="uk-input uk-margin-small-bottom" type="text" (ngModelChange)="changeQRAmount(receiveAmount)" title="Amount to be included in the QR and read by the sending wallet." placeholder="Optional DogeNano amount">
       </div>
       <div *ngIf="qrCodeImage" class="uk-width-1-1@s narrow-div">
         <img [src]="qrCodeImage" alt="QR code"><br>

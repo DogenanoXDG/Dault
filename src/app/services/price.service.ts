@@ -6,8 +6,9 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class PriceService {
   storeKey = `nanovault-price`;
-  apiUrl = `https://api.coingecko.com/api/v3/coins/${environment.currency.id}?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false`;
-
+  apiUrl = `https://api.coingecko.com/api/v3/coins/nano?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false`;
+  apiNanswap = `https://api.nanswap.com/v1/get-estimate?from=XDG&to=XNO&amount=1`;
+  
   price = {
     lastPrice: 0,
     lastPriceBTC: 0,
@@ -21,6 +22,7 @@ export class PriceService {
   async getPrice(currency = 'USD') {
     if (!currency) return; // No currency defined, do not refetch
     const response: any = await this.http.get(`${this.apiUrl}`).toPromise();
+    const nanswap: any = await this.http.get(`${this.apiNanswap}`).toPromise();
     if (!response) {
       return this.price.lastPrice;
     }
@@ -28,9 +30,10 @@ export class PriceService {
     const quote = response.market_data.current_price;
     const currencyPrice = quote[currency.toLowerCase()];
     const btcPrice = quote.btc;
+    const multy = nanswap.amountTo;
 
-    this.price.lastPrice = currencyPrice;
-    this.price.lastPriceBTC = btcPrice;
+    this.price.lastPrice = currencyPrice * multy;
+    this.price.lastPriceBTC = btcPrice * multy;
 
     this.savePrice();
 
