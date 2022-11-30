@@ -24,7 +24,7 @@ export const environment = {
       name: 'MyEcoria Node',
       value: 'myecoria',
       api: 'https://dogerpc.myecoria.com',
-      ws: 'ws://server.myecoria.com:7058',
+      ws: 'wss://ws.dogenano.io',
       auth: null,
       shouldRandom: true,
     }
