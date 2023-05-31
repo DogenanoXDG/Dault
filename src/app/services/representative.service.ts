@@ -162,7 +162,7 @@ export class RepresentativeService {
       if (percent.gte(3)) {
         status = 'alert'; // Has extremely high voting weight
         repStatus.veryHighWeight = true;
-        repStatus.changeRequired = true;
+        repStatus.changeRequired = false;
       } else if (percent.gte(2)) {
         status = 'warn'; // Has high voting weight
         repStatus.highWeight = true;
@@ -245,7 +245,7 @@ export class RepresentativeService {
         repStatus.veryLowUptime = true;
         repStatus.daysSinceLastVoted = uptimeIntervalDays;
         repStatus.warn = true;
-        repStatus.changeRequired = true;
+        repStatus.changeRequired = false;
       } else {
         // any other api error
         status = status === 'none' ? 'unknown' : status;
