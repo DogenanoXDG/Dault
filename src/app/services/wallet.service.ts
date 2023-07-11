@@ -438,8 +438,11 @@ export class WalletService {
         for (const accountID in batchResponse.frontiers) {
           if (batchResponse.frontiers.hasOwnProperty(accountID)) {
             const frontier = batchResponse.frontiers[accountID];
-            if (frontier !== batchAccounts[accountID].publicKey) {
-              usedIndices.push(batchAccounts[accountID].index);
+            const frontierIsValidHash = this.util.nano.isValidHash(frontier);
+            if (frontierIsValidHash === true) {
+              if (frontier !== batchAccounts[accountID].publicKey) {
+                usedIndices.push(batchAccounts[accountID].index);
+              }
             }
           }
         }
@@ -676,7 +679,15 @@ export class WalletService {
 
       walletAccount.balanceFiat = this.util.nano.rawToMnano(walletAccount.balance).times(fiatPrice).toNumber();
 
-      walletAccount.frontier = frontiers.frontiers[accountID] || null;
+      const walletAccountFrontier = frontiers.frontiers?.[accountID];
+      const walletAccountFrontierIsValidHash = this.util.nano.isValidHash(walletAccountFrontier);
+
+      walletAccount.frontier = (
+          (walletAccountFrontierIsValidHash === true)
+        ? walletAccountFrontier
+        : null
+      );
+
       walletAccount.pendingBelowThreshold = [new BigNumber(0)];
 
       walletBalance = walletBalance.plus(walletAccount.balance);
