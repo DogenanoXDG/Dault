@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment';
 export class PriceService {
   storeKey = `nanovault-price`;
   apiUrl = `https://api.coingecko.com/api/v3/coins/nano?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false`;
-  apiNanswap = `https://api.nanswap.com/v1/get-estimate?from=XDG&to=XNO&amount=1`;
+  apiNanswap = `https://data.nanswap.com/get-markets`;
   
   price = {
     lastPrice: 0,
@@ -30,7 +30,7 @@ export class PriceService {
     const quote = response.market_data.current_price;
     const currencyPrice = quote[currency.toLowerCase()];
     const btcPrice = quote.btc;
-    const multy = nanswap.amountTo;
+    const multy = nanswap.find((c => c.key === "XDG/XNO")).midPrice;
 
     this.price.lastPrice = currencyPrice * multy;
     this.price.lastPriceBTC = btcPrice * multy;
